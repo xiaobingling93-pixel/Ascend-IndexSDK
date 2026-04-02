@@ -22,6 +22,85 @@ Index SDK特征检索的使用，依赖NPU固件驱动包、CANN软件包、[Ope
 
 ## 安装依赖<a name="ZH-CN_TOPIC_0000001506414849"></a>
 
+### Ubuntu系统<a name="ZH-CN_TOPIC_0000001631987505"></a>
+
+Ubuntu系统环境中所需依赖名称、对应版本及获取建议请参见[表1](#table20540329125613)。
+
+**表 1**  Ubuntu系统依赖名称对应版本
+<a name="table20540329125613"></a>
+
+|依赖名称|版本建议|获取建议|
+|--|--|--|
+|gcc|7.5.0|建议通过获取源码包编译安装|
+|cmake|不低于3.24.0|建议通过包管理安装，安装命令参考如下。<br>```sudo apt-get install -y cmake```<br>若包管理中的版本不符合最低版本要求，可自行通过源码方式安装。|
+|Python|3.9/3.10/3.11/3.12|建议通过获取源码包编译安装|
+
+参考如下命令，检查是否已安装GCC、CMake等依赖软件。
+
+```bash
+gcc --version
+cmake --version
+python3 --version
+```
+
+若分别返回如下信息，说明相应软件已安装（以下回显仅为示例，请以实际情况为准）。
+
+```bash
+gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+cmake version 3.24.0
+Python 3.9.11
+```
+### CentOS系统<a name="ZH-CN_TOPIC_0000001632546921"></a>
+
+CentOS系统环境中所需依赖名称、对应版本及获取建议请参见[表2](#table20540329125611)。
+
+**表 2** CentOS系统依赖名称对应版本
+<a id="table20540329125611"></a>
+
+|依赖名称|版本建议|获取建议|
+|--|--|--|
+|gcc|7.5.0|建议通过获取源码包编译安装|
+|cmake|不低于3.24.0|建议通过包管理安装，安装命令参考如下。<br>```sudo yum install -y cmake```<br>若包管理中的版本不符合最低版本要求，可自行通过源码方式安装。|
+|Python|3.9|建议通过获取源码包编译安装|
+
+参考如下命令，检查是否已安装GCC、CMake等依赖软件。
+
+```bash
+gcc --version
+cmake --version
+python3 --version
+```
+
+若分别返回如下信息，说明相应软件已安装（以下回显仅为示例，请以实际情况为准）。
+
+```bash
+gcc 7.5.0
+cmake version 3.24.0
+Python 3.9.11
+```
+
+### Python依赖<a name="ZH-CN_TOPIC_0000001632546921"></a>
+
+Python安装好后，pip所需依赖名称、对应版本及获取建议请参见[表3](#table20540329125612)。
+
+**表 3** pip依赖名称对应版本
+<a id="table20540329125612"></a>
+
+|依赖名称|版本建议|获取建议|
+|--|--|--|
+|numpy|1.25.0|安装命令参考如下。<br>```pip3 install numpy==1.25.0```<br>|
+|decorator|5.2.1|安装命令参考如下。<br>```pip3 install decorator==5.2.1```<br>|
+|sympy|1.14|安装命令参考如下。<br>```pip3 install sympy==1.14```<br>|
+|cffi|1.15.1|安装命令参考如下。<br>```pip3 install cffi==1.15.1```<br>|
+|pyyaml|无|安装命令参考如下。<br>```pip3 install pyyaml```<br>|
+|pathlib2|无|安装命令参考如下。<br>```pip3 install pathlib2```<br>|
+|protobuf|无|安装命令参考如下。<br>```pip3 install protobuf```<br>|
+|scipy|无|安装命令参考如下。<br>```pip3 install scipy```<br>|
+|requests|无|安装命令参考如下。<br>```pip3 install requests```<br>|
+|attrs|无|安装命令参考如下。<br>```pip3 install attrs```<br>|
+|psutil|无|安装命令参考如下。<br>```pip3 install psutil```<br>|
+|faiss-cpu|1.13.2|安装命令参考如下。<br>```pip3 install faiss-cpu==1.13.2```<br>|
+
 ### 安装NPU驱动固件和CANN<a name="ZH-CN_TOPIC_0000001456854880"></a>
 
 **下载依赖软件包<a name="section119752030133014"></a>**
