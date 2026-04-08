@@ -106,7 +106,6 @@ IVFSQT算法在添加较大底库后，update接口会使用IndexFlat来进行CP
 
 Faiss源码的exhaustive_L2sqr_seq接口中去掉omp的num_threads(nt)约束后，重新编译安装Faiss 1.10.0版本。多卡场景可设置export OMP_NUM_THREADS=2。
 
-
 ## 生成算子常见问题<a name="ZH-CN_TOPIC_0000002283337613"></a>
 
 ### 提示MemoryError错误或者multiprocessing报错<a name="ZH-CN_TOPIC_0000002252470708"></a>

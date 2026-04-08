@@ -47,7 +47,7 @@
 |--|--|--|--|
 |MindSDK 26.0.0|<li>MindSDK 6.0.RC3及6.0.RC3.x</li><li>MindSDK 6.0.0及6.0.0.x</li><li>MindSDK 7.0.RC1及7.0.RC1.x</li><li>MindSDK 7.1.RC1及7.1.RC1.x</li><li>MindSDK 7.2.RC1及7.2.RC1.x</li><li>MindSDK 7.3.0及7.3.0.x</li>|<li>CANN 8.1.RC1及8.1.RC1.x</li><li>CANN 8.2.RC1及8.2.RC1.x</li><li>CANN 8.3.RC1及8.3.RC1.x</li><li>CANN 8.5.0及8.5.0.x</li><li>CANN 9.0.0及9.0.0.x</li>|<li>Ascend HDK 25.0.RC1及Ascend HDK 25.0.RC1.x</li><li>Ascend HDK 25.2.0及Ascend HDK 25.2.0.x</li><li>Ascend HDK 25.3.RC1及Ascend HDK 25.3.RC1.x</li><li>Ascend HDK 25.5.0及Ascend HDK 25.5.0.x</li><li>Ascend HDK 26.0.0及Ascend HDK 26.0.0.x</li>|
 
-> [!NOTE] 说明 
+> [!NOTE]
 >软件版本兼容性是指网元软件版本升级时，关联设备、网管和上层OSS不需要联动升级或打补丁，仍然可以支持已有功能。
 
 # 版本使用注意事项<a name="ZH-CN_TOPIC_0000002492282032"></a>
@@ -72,7 +72,7 @@
 
 **Index SDK<a name="zh-cn_topic_0000001935999544_section18133752165114"></a>**
 
-- ILFlat标准态性能优化，底库500w， 256维度，通过GetFeature随机获取4w底库，耗时减少到25ms内。
+- ILFlat标准态性能优化，底库500w，256维度，通过GetFeature随机获取4w底库，耗时减少到25ms内。
 - 异构内存支持时空库附加属性，功能支持：时空库TSInt8FlatCos，1024维度下，异构内存场景能添加附加属性，检索能正常过滤附加属性。
 
 ## 已解决的问题<a name="ZH-CN_TOPIC_0000002492442002"></a>
