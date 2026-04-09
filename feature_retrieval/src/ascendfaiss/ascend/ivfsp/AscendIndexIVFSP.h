@@ -141,10 +141,10 @@ public:
 
     void search_with_filter(idx_t n, const float *x, idx_t k,
                             float *distances, idx_t *labels, const void *filters) const override;
-
-private:
+                            
     AscendIndexIVFSP();
 
+private:
     std::shared_ptr<AscendIndexIVFSPImpl> impl_;
 };
 
