@@ -27,7 +27,7 @@ std::shared_ptr<AscendIndexIVFSP> AscendIndexIVFSP::loadAllData(const AscendInde
     const uint8_t *data, size_t dataLen, const AscendIndexIVFSP *codeBookSharedIdx)
 {
     auto codeBookSharedImpl = (codeBookSharedIdx != nullptr) ? codeBookSharedIdx->impl_ : nullptr;
-    auto index = std::shared_ptr<AscendIndexIVFSP>(new AscendIndexIVFSP());
+    auto index = std::make_shared<AscendIndexIVFSP>();
     index->impl_ = AscendIndexIVFSPImpl::loadAllData(index, config, data, dataLen, codeBookSharedImpl);
     index->AscendIndex::impl_ = index->impl_;
     return index;
