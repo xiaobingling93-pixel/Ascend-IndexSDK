@@ -1,0 +1,95 @@
+# 昇腾 Index SDK
+
+> [English](./OVERVIEW.md) | 中文
+
+## 支持的 Tags 及 Dockerfile 链接
+
+### Tag 规范
+
+Tag 遵循以下格式：
+
+```bash
+<cann版本>-<芯片系列>-<操作系统>-<python版本>
+```
+
+| 字段         | 示例值                          | 说明             |
+| ------------ | ------------------------------- | ---------------- |
+| `cann版本`   | `9.0.0`              | CANN 版本号      |
+| `芯片系列`   | `910b`、`a3`、`310p`            | 目标昇腾芯片系列 |
+| `操作系统`   | `ubuntu22.04`、`openeuler24.03` | 基础操作系统     |
+| `python版本` | `py3.11`    | Python 版本      |
+
+- CANN 由 [CANN community](https://www.hiascend.com/cann) 维护
+
+### CANN 9.0.0基础镜像
+
+| Tag                                | Dockerfile                                                   | 镜像内容        |
+| ---------------------------------- | ------------------------------------------------------------ | --------------- |
+| `9.0.0-910b-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-910b-ubuntu22.04-py3.11/Dockerfile) | toolkit |
+| `9.0.0-310p-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-310p-ubuntu22.04-py3.11/Dockerfile)      | toolkit |
+| `9.0.0-a3-ubuntu22.04-py3.11` | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-a3-ubuntu22.04-py3.11/Dockerfile)         | toolkit |
+
+---
+
+## 快速开始
+
+### 前置要求（可选）
+
+#### 安装驱动
+
+主机上必须安装与容器内 CANN 版本兼容的昇腾 NPU 驱动。请参阅 [CANN 兼容性矩阵](https://www.hiascend.com/document) 了解驱动与 CANN 版本的对应关系。
+
+---
+
+### 运行 Index 容器
+
+```bash
+docker run \
+    --name index_container \
+    --device /dev/davinci1 \
+    --device /dev/davinci_manager \
+    --device /dev/devmm_svm \
+    --device /dev/hisi_hdc \
+    -v /usr/local/dcmi:/usr/local/dcmi \
+    -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
+    -v /usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/ \
+    -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
+    -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -it ascend/index:tag bash
+```
+
+### 如何本地构建
+
+```bash
+docker build -t {your_repo}/index:latest -f Dockerfile .
+```
+
+### 如何二次开发
+
+```bash
+# 以 CANN 镜像为基础镜像，叠加用户软件
+FROM swr.cn-south-1.myhuaweicloud.com/ascendhub/cann:9.0.0-beta.1-910b-ubuntu22.04-py3.11
+
+RUN apt update -y && \
+    apt install gcc ...
+
+...
+```
+
+---
+
+## 支持的硬件
+
+| 芯片系列  | 产品示例                        | 架构           |
+| --------- | ------------------------------- | -------------- |
+| 昇腾 910B | Atlas 800I A2                   | ARM64 / x86_64 |
+| 昇腾 A3   | Atlas 800I A3                   | ARM64 / x86_64 |
+| 昇腾 310P | Atlas 300I Pro、Atlas 300V Pro  | ARM64 / x86_64 |
+
+---
+
+## 许可证
+
+查看这些镜像中包含的 CANN 和 Mind 系列软件的[许可证信息](https://github.com/Ascend/cann-container-image/blob/main/LICENSE)。
+
+与所有容器镜像一样，预装软件包（Python、系统库等）可能受其自身许可证约束。
