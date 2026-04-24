@@ -2,6 +2,17 @@
 
 > English | [中文](./OVERVIEW.zh.md)
 
+## Quick Reference
+
+- Where to get help
+
+  - [Issue Feedback](https://gitcode.com/Ascend/IndexSDK/issues)
+  - [IndexSDK Code](https://gitcode.com/Ascend/IndexSDK)
+  - [IndexSDK API Reference](../docs/zh/api/README.md)
+  - [IndexSDK Documentation](https://www.hiascend.com/document/detail/zh/mindsdk/730/indexn/indexug/mxindexfrug_0002.html)
+  - [AscendHub Image Repository](https://www.hiascend.com/developer/ascendhub/detail/indexsdk/)
+  - [Ascend Community](https://www.hiascend.com/)
+
 ## Supported Tags and Dockerfile Links
 
 ### Tag Naming Convention
@@ -9,27 +20,23 @@
 Tags follow this pattern:
 
 ```bash
-<cann_version>-<chip_series>-<os>-<python_version>
+<indexsdk_version>-<chip_series>-<os>-<python_version>
 ```
 
 | Field            | Example Values                  | Description               |
 | ---------------- | ------------------------------- | ------------------------- |
-| `cann_version`   | `9.0.0`   | CANN version              |
+| `indexsdk_version` | `26.0.0`   | IndexSDK version              |
 | `chip_series`    | `910b`, `a3`, `310p`            | Target Ascend chip family |
 | `os`             | `ubuntu22.04`, `openeuler24.03` | Base operating system     |
 | `python_version` | `py3.11`    | Python version            |
 
-- CANN is maintained by 
-
-  [CANN community](https://www.hiascend.com/cann)
-
-### CANN 9.0.0 Base Image
+### CANN 9.0.0 + 26.0.0 Index SDK Image
 
 | Tag                                | Dockerfile                                                   | Image Content        |
 | ---------------------------------- | ------------------------------------------------------------ | --------------- |
-| `9.0.0-910b-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-910b-ubuntu22.04-py3.11/Dockerfile) | toolkit |
-| `9.0.0-310p-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-310p-ubuntu22.04-py3.11/Dockerfile)      | toolkit |
-| `9.0.0-a3-ubuntu22.04-py3.11` | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-a3-ubuntu22.04-py3.11/Dockerfile)         | toolkit |
+| `26.0.0-910b-ubuntu22.04-py3.11`    | [Dockerfile](./9.0.0-beta-910b-ubuntu22.04-py3.11/Dockerfile.910b.ubuntu) | toolkit + Index SDK |
+| `26.0.0-310p-ubuntu22.04-py3.11`    | [Dockerfile](./9.0.0-beta-310p-ubuntu22.04-py3.11/Dockerfile.310p.ubuntu)      | toolkit + Index SDK |
+| `26.0.0-a3-ubuntu22.04-py3.11` | [Dockerfile](./9.0.0-beta-a3-ubuntu22.04-py3.11/Dockerfile.a3.ubuntu)         | toolkit + Index SDK |
 
 ---
 
