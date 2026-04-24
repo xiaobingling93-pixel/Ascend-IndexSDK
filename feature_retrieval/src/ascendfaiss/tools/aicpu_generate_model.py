@@ -124,6 +124,16 @@ def generate_topk_ivf_fp32_obj():
     generator.add_dynamic_output("ND", [-1, -1], [[1, -1], [1, -1]], "uint64")
     return generator.generate_obj()
 
+def generate_topk_ivfpq_l3_obj():
+    generator = OpJsonGenerator("TopkIvfpqL3")
+    generator.add_dynamic_input("ND", [-1, -1, -1], [[1, -1], [1, -1], [1, -1]], "uint64")
+    generator.add_dynamic_input("ND", [-1, -1, -1], [[1, -1], [1, -1], [1, -1]], "float")
+    generator.add_dynamic_input("ND", [-1, -1, -1], [[1, -1], [1, -1], [1, -1]], "uint16")
+    generator.add_dynamic_input("ND", [-1], [[1, -1]], "int64")
+    generator.add_dynamic_output("ND", [-1, -1], [[1, -1], [1, -1]], "float")
+    generator.add_dynamic_output("ND", [-1, -1], [[1, -1], [1, -1]], "uint64")
+    return generator.generate_obj()
+
 
 def generate_vec_l2sqr_obj():
     generator = OpJsonGenerator("VecL2Sqr")
@@ -338,6 +348,7 @@ def generate_aicpu_offline_model():
     ops_list.append(generate_topk_multisearch_obj())
     ops_list.append(generate_topk_ivf_obj())
     ops_list.append(generate_topk_ivf_fp32_obj())
+    ops_list.append(generate_topk_ivfpq_l3_obj())
     ops_list.append(generate_vec_l2sqr_obj())
     ops_list.append(generate_vec_l2sqr_flat_at_obj())
     ops_list.append(generate_vec_l2sqr_flat_at_int8_obj())

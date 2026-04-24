@@ -54,6 +54,14 @@ enum TopkIvfAttrIdx : int32_t {
     TOPK_IVF_ATTR_IDX_COUNT,
 };
 
+enum TopkIvfpqL3AttrIdx : int32_t {
+    TOPK_IVFPQ_L3_ATTR_ASC_IDX = 0,
+    TOPK_IVFPQ_L3_ATTR_K_IDX,
+    TOPK_IVFPQ_L3_ATTR_BLOCK_NUM_IDX,
+    TOPK_IVFPQ_L3_ATTR_BATCH_NUM_IDX,
+    TOPK_IVFPQ_L3_ATTR_IDX_COUNT,
+};
+
 enum TopkIvfFuzzyAttrIdx : int32_t {
     TOPK_IVF_FUZZY_ATTR_ASC_IDX = 0,
     TOPK_IVF_FUZZY_ATTR_K_IDX,
