@@ -2,6 +2,15 @@
 
 > [English](./OVERVIEW.md) | 中文
 
+## 快速参考
+- 从哪里获取帮助
+  - [issue 反馈](https://gitcode.com/Ascend/IndexSDK/issues)
+  - [IndexSDK 代码](https://gitcode.com/Ascend/IndexSDK)
+  - [IndexSDK API 参考](../docs/zh/api/README.md)
+  - [IndexSDK 文档](https://www.hiascend.com/document/detail/zh/mindsdk/730/indexn/indexug/mxindexfrug_0002.html)
+  - [AscendHub镜像仓库](https://www.hiascend.com/developer/ascendhub/detail/indexsdk/)
+  - [Ascend社区](https://www.hiascend.com/)
+
 ## 支持的 Tags 及 Dockerfile 链接
 
 ### Tag 规范
@@ -9,25 +18,25 @@
 Tag 遵循以下格式：
 
 ```bash
-<cann版本>-<芯片系列>-<操作系统>-<python版本>
+<indexsdk版本>-<芯片系列>-<操作系统>-<python版本>
 ```
 
 | 字段         | 示例值                          | 说明             |
 | ------------ | ------------------------------- | ---------------- |
-| `cann版本`   | `9.0.0`              | CANN 版本号      |
+| `indexsdk版本`   | `26.0.0`              | Index SDK 版本号      |
 | `芯片系列`   | `910b`、`a3`、`310p`            | 目标昇腾芯片系列 |
 | `操作系统`   | `ubuntu22.04`、`openeuler24.03` | 基础操作系统     |
 | `python版本` | `py3.11`    | Python 版本      |
 
-- CANN 由 [CANN community](https://www.hiascend.com/cann) 维护
 
-### CANN 9.0.0基础镜像
+
+### CANN 9.0.0 + 26.0.0 Index SDK镜像
 
 | Tag                                | Dockerfile                                                   | 镜像内容        |
 | ---------------------------------- | ------------------------------------------------------------ | --------------- |
-| `9.0.0-910b-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-910b-ubuntu22.04-py3.11/Dockerfile) | toolkit |
-| `9.0.0-310p-ubuntu22.04-py3.11`    | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-310p-ubuntu22.04-py3.11/Dockerfile)      | toolkit |
-| `9.0.0-a3-ubuntu22.04-py3.11` | [Dockerfile](https://github.com/Ascend/cann-container-image/blob/main/cann/9.0.0-beta.2-a3-ubuntu22.04-py3.11/Dockerfile)         | toolkit |
+| `26.0.0-910b-ubuntu22.04-py3.11`    | [Dockerfile](./9.0.0-beta-910b-ubuntu22.04-py3.11/Dockerfile.910b.ubuntu) | toolkit + Index SDK |
+| `26.0.0-310p-ubuntu22.04-py3.11`    | [Dockerfile](./9.0.0-beta-310p-ubuntu22.04-py3.11/Dockerfile.310p.ubuntu)      | toolkit + Index SDK |
+| `26.0.0-a3-ubuntu22.04-py3.11` | [Dockerfile](./9.0.0-beta-a3-ubuntu22.04-py3.11/Dockerfile.a3.ubuntu)         | toolkit + Index SDK |
 
 ---
 
