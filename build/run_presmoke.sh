@@ -31,6 +31,7 @@ export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64/driver:$LD_LIBRARY_PATH
 source /usr/local/Ascend/ascend-toolkit/set_env.sh
 
 ALGORITHMS=("flat" "binary_flat" "sq" "int8" "cluster" "ilflat" "ivfsq" "ivfsqt" "ts" "multi")
+npu-smi info
 
 # 每个算法的关键词（空格分隔，支持多个）
 declare -A ALG_KEYWORDS=(
@@ -123,10 +124,10 @@ echo "[PRESMOKE_INFO] start detect algorithms to test..."
 if [[ ! -f "$CHANGE_FILE" ]]; then
     echo "[PRESMOKE_ERROR] $CHANGE_FILE not found!"
     exit 1
-    # 调试用
-    # cd "$CUR_DIR/.."
-    # changed=$(git diff master --no-commit-id --name-only)
-    # echo "$changed" > "$CHANGE_FILE"
+    # 调试请注释 exit 1
+    cd "$CUR_DIR/.."
+    changed=$(git diff master --no-commit-id --name-only)
+    echo "$changed" > "$CHANGE_FILE"
 fi
 echo "[PRESMOKE_INFO] Changed files:"
 cat "$CHANGE_FILE"
