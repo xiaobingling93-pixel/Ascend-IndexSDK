@@ -92,6 +92,10 @@ if [ -d "$PRESMOKE_DIR/pkg" ]; then
     echo "[PRESMOKE_INFO] test files already exist, removing..."
     rm -rf "$PRESMOKE_DIR/pkg"
 fi
+if [ -d "$PRESMOKE_DIR/mindsdk-referenceapps" ]; then
+    echo "[PRESMOKE_INFO] mindsdk-referenceapps already exist, removing..."
+    rm -rf "$PRESMOKE_DIR/mindsdk-referenceapps"
+fi
 echo "[PRESMOKE_INFO] mkdir: $PRESMOKE_DIR/pkg"
 mkdir -p "$MX_INDEX_MODELPATH"
 
